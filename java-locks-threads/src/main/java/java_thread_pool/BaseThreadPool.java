@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ThreadPoolDemo {
+public class BaseThreadPool {
 
     // 性能低：不停的创建新线程, 线程的创建和切换会造成性能低下
     private void testUsingThreads() throws InterruptedException {
