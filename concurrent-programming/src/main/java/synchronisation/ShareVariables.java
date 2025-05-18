@@ -8,6 +8,7 @@ public class ShareVariables {
 
     // 对象field成员存储在内存的堆空间(heap memory): 所有Threads共享数据
     private int index;
+
     // 隶属于类型的成员，也具有多线程共享性: 作为锁, 一般需要设置成final static, 保存值的不可变性
     private final static String syncStr = "lock";
 

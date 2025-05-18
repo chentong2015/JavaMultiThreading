@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/java-locks-threads/pom.xml" />
         <option value="$PROJECT_DIR$/java-concurrent-programming/pom.xml" />
         <option value="$PROJECT_DIR$/concurrent-programming/pom.xml" />
+        <option value="$PROJECT_DIR$/java-thread-locks/pom.xml" />
       </list>
     </option>
   </component>
