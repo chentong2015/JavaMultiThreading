@@ -1,9 +1,10 @@
-package java_thread.thread;
+package base_thread.thread_lifecycle;
 
 // TODO. Java线程的启动和调度(基于JMM模型)
-//  具体线程的调度完全交给JVM和OS来决定，输出的顺序不可保证
-// new Thread().start();
-//   .start() 线程启动方法会调用到本地方法
+// 具体线程的调度完全交给JVM和OS来决定，输出的顺序不可保证
+//
+// 线程启动方法会调用到本地方法
+// new Thread().start()
 //   private native void start0();
 //     openjdk 调用c语言实现的方法
 //        os   调用os中的线程的启动

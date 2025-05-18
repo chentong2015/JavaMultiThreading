@@ -1,0 +1,8 @@
+如果一个在waiting的线程，同时被notify和interrupt, 会如何?
+1. 从wait()中正常返回，但是这个线程的.isInterrupted()被中断状态会被修改成true
+2. 从wait()中返回，同时抛出异常InterruptedException，可能不会重置它的interrupt status
+3. wait set集中别的一些线程必须要收到notify通知
+
+唤醒不能因为中断而丢失，如果object m的等待集中包含线程集s，别的线程在m执行notify，会如何?
+1. s中至少有一个等待的线程，会正常的从wait()中返回
+2. s中所有的线程都必须从wait()中返回，但是抛出异常

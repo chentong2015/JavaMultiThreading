@@ -1,15 +1,7 @@
-package java_thread.thread.wait_notify;
+package base_thread.wait_notify;
 
-// TODO. 使用wait()方法的标准模式: 用来使线程等待某个条件，它必须在同步区域内部被调用
-// 始终使用wait循环模式来调用，不要在循环外调用
-// public void testWait() {
-//     synchronized (obj) {
-//         while (<condition does not hold>) {
-//             obj.wait(); release lock
-//         }
-//     }
-// }
-public class JavaWaitNotify {
+// TODO. 使用Wait Notify实现三个线程的顺序执行
+public class JavaWaitNotify3 {
 
     private static Object lock1 = new Object();
     private static Object lock2 = new Object();
@@ -31,8 +23,10 @@ public class JavaWaitNotify {
         final Thread thread2 = new Thread(() -> {
             synchronized (lock1) {
                 try {
-                    if (!t1Run) {      // 可能由thread2先拿到锁，但是不能执行，必须等待.wait()
-                        lock1.wait();  // 释放到获取的myLock1锁，等待thread1执行完毕之后的通知.notify();
+                    // 可能由thread2先拿到锁，但是不能执行，必须等待.wait()
+                    if (!t1Run) {
+                        // 释放到获取的myLock1锁，等待thread1执行完毕之后的通知.notify();
+                        lock1.wait();
                     }
                     synchronized (lock2) {
                         System.out.println("Thread 2 done");

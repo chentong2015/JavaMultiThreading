@@ -8,7 +8,7 @@ public class DemoCountDownLatchTime {
 
     // 只有在全部的并发数量准备好之后，才开始记录
     // 只有当全部的并发数量结束完成后，才结束记录
-    public static long time(Executor executor, int concurrency, Runnable action) throws InterruptedException {
+    public long time(Executor executor, int concurrency, Runnable action) throws InterruptedException {
         CountDownLatch ready = new CountDownLatch(concurrency);
         CountDownLatch start = new CountDownLatch(1);
         CountDownLatch done = new CountDownLatch(concurrency);

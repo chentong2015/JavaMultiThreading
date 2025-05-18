@@ -1,33 +1,34 @@
-package java_thread.thread.wait_notify;
+package base_thread.wait_notify;
 
-public class ThreadMessage {
+// TODO. 使用Wait Notify实现消息的读写 => 等效于线程安全的队列
+public class JavaWaitNotifyMQ {
 
     private String message;
-    private boolean empty = true;
+    private boolean isEmpty = true;
 
     // 将wait()置于循环，在被唤醒的时候判断标识状态再执行
     public synchronized void writeSync(String message) {
-        while (!empty) {
+        while (!isEmpty) {
             try {
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        empty = false;
+        isEmpty = false;
         this.message = message;
         notifyAll();
     }
 
     public synchronized String readSync() {
-        while (empty) {
+        while (isEmpty) {
             try {
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        empty = true;
+        isEmpty = true;
         notifyAll();
         return message;
     }
