@@ -7,3 +7,6 @@ fork-join任务:
 使用场景: ForkJoinPool 专门处理计算密集型任务
 1. 单个任务时间比较短
 2. 需要处理的任务数量很大
+
+TODO. 对比ForkJoinPool和ThreadPool的场景区别
+测试ForkJoinPool + Benchmark测试

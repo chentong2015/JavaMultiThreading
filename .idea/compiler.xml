@@ -11,5 +11,8 @@
         <module name="java-thread-locks" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="java-locks-threads" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
