@@ -6,3 +6,9 @@ TODO. Park()用于挂起(禁用)当前线程
 - 通过LockSupport.unpark(thread)唤醒
 - 线程被中断
 - 系统唤醒, 某个条件或信号来恢复执行
+
+TODO. Park 线程的状态: jstack查看线程栈
+"Thread-1" #12 prio=5 os_prio=0 tid=0x00007f8a6800a800 nid=0x5166 waiting on condition [0x00007f8a6012e000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)

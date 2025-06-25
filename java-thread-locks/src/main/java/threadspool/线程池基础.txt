@@ -1,5 +1,4 @@
-Thread Pool Design：
-Creates a thread pool that creates new threads as needed, reuse previously threads when available.
+Thread Pool creates new threads as needed, reuse previously threads when available.
 If no existing thread is available, a new thread will be created and added to the pool.
 
 TODO. 使用线程池执行"大量短小并发"任务(short-lived asynchronous tasks)

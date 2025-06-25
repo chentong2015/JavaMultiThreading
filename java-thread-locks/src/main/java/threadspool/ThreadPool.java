@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class BaseThreadPool {
+public class ThreadPool {
 
     // TODO. 线程池避免大量线程的创建和销毁，提升应用的性能
     public static void main(String[] args) {

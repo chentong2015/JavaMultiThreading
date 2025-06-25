@@ -1,0 +1,16 @@
+TODO: 线程池本身是如何保证线程安全的 ?
+用一个int值记录线程池的生命状态, 并且保证是原子操作AtomicInteger
+private final AtomicInteger ctl = new AtomicInteger(ctlOf(RUNNING, 0));
+private static final int COUNT_BITS = Integer.SIZE - 3;      留出3个bit位
+private static final int COUNT_MASK = (1 << COUNT_BITS) - 1; 低位的29位全部设置成1，作为Mask
+
+runState is stored in the high-order bits 运行时的状态使用最高位的3位来记录
+
+private static final int RUNNING    = -1 << COUNT_BITS; 右移动29位
+   负数二进制：正数的反码 + 1
+   RUNNING = 1110 0000 0000 0000 0000 0000 0000 0000
+private static final int SHUTDOWN   =  0 << COUNT_BITS;
+private static final int STOP       =  1 << COUNT_BITS;
+   STOP = 0001 0000 0000 0000 0000 0000 0000 0000
+private static final int TIDYING    =  2 << COUNT_BITS;
+private static final int TERMINATED =  3 << COUNT_BITS;
