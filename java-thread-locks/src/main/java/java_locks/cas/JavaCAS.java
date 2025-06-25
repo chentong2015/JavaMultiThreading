@@ -20,7 +20,7 @@ public class JavaCAS {
     //    while(true) {
     //       int oldValue = myNum.get();
     //       int newValue = oldValue + 1;
-    //       if(myNum.CompareAndSetInt(oldValue, newValue)) { // CAS的实现
+    //       if(myNum.compareAndSetInt(oldValue, newValue)) { // CAS的实现
     //          break;
     //       }
     //    }
