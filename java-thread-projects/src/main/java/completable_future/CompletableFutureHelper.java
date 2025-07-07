@@ -1,4 +1,4 @@
-package threadpools;
+package completable_future;
 
 import java.util.List;
 import java.util.concurrent.*;
