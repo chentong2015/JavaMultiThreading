@@ -1,9 +1,6 @@
 package shared_objects;
 
-// 设计场景:
-// 多线程共享Java对象时抛出异常状态
-// - 线程并发运行时，避免共享对象被修改
-// - 线程切换运行时，保证对象一致性和方法执行的独立性
+
 public class JvmShareObjectsDesign1 {
 
     // 多个线程所共享的对象，启动包含所共享的object
