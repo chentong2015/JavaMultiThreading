@@ -28,7 +28,7 @@ public class ThreadPoolExecutors {
 
         // TODO. shutdown()不会阻塞主线程
         // 确保线程池中所有的线程结束, 不在接受新的task执行任务, 并且不会再次复用
-        // 如果不调用.shutdown(), 虚拟机可能不会退出(因为还有线程池中线程在运行)
+        // 如果不调用.shutdown(), 虚拟机可能不会退出 (因为还有线程池中线程存活)
         executorService.shutdown();
 
         // Attempts to stop all actively executing tasks
@@ -42,10 +42,24 @@ public class ThreadPoolExecutors {
         }
         System.out.println("All tasks done");
 
-        // TODO. Blocks until all tasks have completed execution after a shutdown request,
-        //  or the timeout occurs, or the current thread is interrupted
+        // Blocks until all tasks have completed execution after a shutdown request,
+        // or the timeout occurs, or the current thread is interrupted
         boolean isCompleted = executorService.awaitTermination(5, TimeUnit.SECONDS);
     }
+
+
+    public void awaitTerminationAfterShutdown(ExecutorService threadPool) {
+        threadPool.shutdown();
+        try {
+            if (!threadPool.awaitTermination(5, TimeUnit.MINUTES)) {
+                threadPool.shutdownNow();
+            }
+        } catch (InterruptedException ex) {
+            threadPool.shutdownNow();
+            Thread.currentThread().interrupt();
+        }
+    }
+
 
     // TODO. 获取线程池中线程执行后的返回值
     // 1. Future<T> submit(Runnable task, T result);
