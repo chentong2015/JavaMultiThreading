@@ -28,7 +28,7 @@ public class ThreadPoolExecutors {
 
         // TODO. shutdown()不会阻塞主线程
         // 确保线程池中所有的线程结束, 不在接受新的task执行任务, 并且不会再次复用
-        // 如果不调用.shutdown(), 虚拟机可能不会退出
+        // 如果不调用.shutdown(), 虚拟机可能不会退出(因为还有线程池中线程在运行)
         executorService.shutdown();
 
         // Attempts to stop all actively executing tasks
