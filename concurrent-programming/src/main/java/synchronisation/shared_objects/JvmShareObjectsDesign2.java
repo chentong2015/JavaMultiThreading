@@ -1,4 +1,4 @@
-package shared_objects;
+package synchronisation.shared_objects;
 
 public class JvmShareObjectsDesign2 {
 
