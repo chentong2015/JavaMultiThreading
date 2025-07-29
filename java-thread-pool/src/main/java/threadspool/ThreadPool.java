@@ -1,4 +1,4 @@
-package pool.threadspool;
+package threadspool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
 public class ThreadPool {
 
     // TODO. 线程池避免大量线程的创建和销毁，提升应用的性能
+    // 执行"大量短小并发(short-lived asynchronous tasks)"任务
     public static void main(String[] args) {
         Long startTime = System.currentTimeMillis();
         Random random = new Random();

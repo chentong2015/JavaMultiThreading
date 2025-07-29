@@ -1,4 +1,4 @@
-package pool.forkjoinPool;
+package forkjoinPool;
 
 import java.util.stream.IntStream;
 

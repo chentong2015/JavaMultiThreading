@@ -1,4 +1,4 @@
-package task_pool.demo;
+package multitask_pool.demo;
 
 import java.util.LinkedHashMap;
 import java.util.List;

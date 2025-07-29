@@ -1,4 +1,4 @@
-package task_pool;
+package multitask_pool;
 
 import java.util.ArrayList;
 import java.util.List;

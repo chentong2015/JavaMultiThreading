@@ -1,4 +1,4 @@
-package task_limiter;
+package multitask_limiter;
 
 // TODO. 模拟最多只有throttleLimit个线程在并发执行
 // - 设置能并发运行的线程数限制THROTTLE_LIMIT

@@ -9,6 +9,7 @@
         <module name="concurrent-programming" />
         <module name="java-thread-projects" />
         <module name="java-thread-locks" />
+        <module name="java-thread-pool" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
