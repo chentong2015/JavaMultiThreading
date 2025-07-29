@@ -1,4 +1,4 @@
-package multitask_pool.demo;
+package multitask_pool.template;
 
 import java.util.concurrent.Callable;
 
