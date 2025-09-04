@@ -15,7 +15,7 @@ public class TestThreadPoolTasks {
         Future<Long> countFuture = executor.submit(() -> {
             System.out.println(Thread.currentThread().getName());
             try {
-                Thread.sleep(5000);
+                Thread.sleep(15000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -31,8 +31,10 @@ public class TestThreadPoolTasks {
         }
         System.out.println("Main Thread finished");
 
+        // 在主线程的task执行完之后，再等待6s的时间
+        // 如果在timeout的时间内子线程的task还没有结束，则报错
         try {
-            Long count = countFuture.get(60, TimeUnit.SECONDS);
+            Long count = countFuture.get(6, TimeUnit.SECONDS);
             System.out.println("count = " + count);
         } catch (Exception e) {
             e.printStackTrace();
