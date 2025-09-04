@@ -1,4 +1,4 @@
-package threadspool;
+package work_testing;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -6,8 +6,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 // TODO. 并发任务场景:
-// 从主线程新开一个异步线程，和主线程并发执行
-// 确保两个线程执行结束，最后获取返回结果
+// 从主线程新开一个异步线程，和主线程并发执行(执行的逻辑相互独立)
+// 确保两个线程执行结束，获取各自线程的返回结果
 public class TestThreadPoolTasks {
 
     public static void main(String[] args) {
