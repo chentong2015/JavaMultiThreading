@@ -1,4 +1,4 @@
-package multitask_pool.template;
+package multitask_manager.template;
 
 import java.util.Arrays;
 import java.util.List;

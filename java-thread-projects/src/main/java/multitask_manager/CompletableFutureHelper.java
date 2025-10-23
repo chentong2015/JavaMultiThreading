@@ -1,4 +1,4 @@
-package multitask_pool;
+package multitask_manager;
 
 import java.util.List;
 import java.util.concurrent.*;
