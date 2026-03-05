@@ -1,4 +1,4 @@
-package threads_park;
+package java_thread.threads_park;
 
 import java.util.concurrent.locks.LockSupport;
 

@@ -1,10 +1,10 @@
-package concurrent_tools;
+package concurrent_tools.countdown;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 
-// 多线程的并发执行定时(统计全部执行的时间)
-public class DemoCountDownLatchTime {
+// TODO. 统计多线程任务的并发执行(一起执行)的时间
+public class CountDownLatchTime {
 
     // 只有在全部的并发数量准备好之后，才开始记录
     // 只有当全部的并发数量结束完成后，才结束记录
