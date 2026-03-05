@@ -1,4 +1,4 @@
-package concurrent_api.queue.circular_blocking_queue;
+package concurrent_collections.queue.circular_blocking_queue;
 
 import java.util.ArrayDeque;
 import java.util.Collection;

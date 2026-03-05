@@ -1,4 +1,4 @@
-package concurrent_api.hashmap.hashmap7;
+package concurrent_collections.hashmap.hashmap7;
 
 // JDK 1.7: 数组+链表: 同时保证插入和搜索的效率
 public class BaseHashmap7 {

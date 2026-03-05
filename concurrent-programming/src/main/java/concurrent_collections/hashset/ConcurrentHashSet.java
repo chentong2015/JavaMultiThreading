@@ -1,4 +1,4 @@
-package concurrent_api.hashset;
+package concurrent_collections.hashset;
 
 import java.util.Collections;
 import java.util.HashSet;

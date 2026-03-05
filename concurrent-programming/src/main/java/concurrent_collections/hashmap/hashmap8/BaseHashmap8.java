@@ -1,4 +1,4 @@
-package concurrent_api.hashmap.hashmap8;
+package concurrent_collections.hashmap.hashmap8;
 
 // JDK 1.8: 数组+链表(单向和双向链表)+红黑树TreeNode
 public class BaseHashmap8 {

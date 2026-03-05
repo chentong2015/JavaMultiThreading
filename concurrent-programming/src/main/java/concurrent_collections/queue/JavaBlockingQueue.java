@@ -1,4 +1,4 @@
-package concurrent_api.queue;
+package concurrent_collections.queue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;

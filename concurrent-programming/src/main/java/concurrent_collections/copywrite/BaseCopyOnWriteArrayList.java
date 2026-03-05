@@ -1,4 +1,4 @@
-package concurrent_api.copywrite;
+package concurrent_collections.copywrite;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 

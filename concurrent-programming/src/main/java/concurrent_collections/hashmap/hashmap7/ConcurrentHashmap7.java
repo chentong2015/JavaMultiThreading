@@ -1,4 +1,4 @@
-package concurrent_api.hashmap.hashmap7;
+package concurrent_collections.hashmap.hashmap7;
 
 import java.util.concurrent.ConcurrentHashMap;
 

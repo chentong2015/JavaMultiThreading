@@ -1,4 +1,4 @@
-package concurrent_api.queue.delay_blocking_queue;
+package concurrent_collections.queue.delay_blocking_queue;
 
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;

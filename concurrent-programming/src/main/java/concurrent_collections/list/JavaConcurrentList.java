@@ -1,4 +1,4 @@
-package concurrent_api.list;
+package concurrent_collections.list;
 
 import java.util.ArrayList;
 import java.util.Collections;
