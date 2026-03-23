@@ -8,10 +8,10 @@ import java.util.concurrent.*;
 // newSingleThreadExecutor() 只有一个线程，多任务积累到阻塞队列，造成OOM
 public class ThreadPoolExecutors {
 
-    // TODO. 如果不设置shutdown()，线程池中的线程不会结束，程序不会结束
+    // TODO. 如果不设置shutdown()，线程池中的线程不会结束，程序不会结束 !!
     //  - Shutdown orderly for previously submitted tasks, no new tasks will be accepted.
     //  - Invocation has no additional effect if already shut down.
-    //  - Does not wait for previously submitted tasks to complete. 不会等待全部的task结束
+    //  - Does not wait for previously submitted tasks to complete.
     public static void main(String[] args) throws InterruptedException {
         String[] list = {"item01", "item02", "item03", "item04"};
         ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -40,13 +40,11 @@ public class ThreadPoolExecutors {
         while (!executorService.isTerminated()) {
             // 判断线程池中所有task全部执行结束
         }
-        System.out.println("All tasks done");
 
         // Blocks until all tasks have completed execution after a shutdown request,
         // or the timeout occurs, or the current thread is interrupted
         boolean isCompleted = executorService.awaitTermination(5, TimeUnit.SECONDS);
     }
-
 
     public void awaitTerminationAfterShutdown(ExecutorService threadPool) {
         threadPool.shutdown();
@@ -56,40 +54,6 @@ public class ThreadPoolExecutors {
             }
         } catch (InterruptedException ex) {
             threadPool.shutdownNow();
-            Thread.currentThread().interrupt();
-        }
-    }
-
-
-    // TODO. 获取线程池中线程执行后的返回值
-    // 1. Future<T> submit(Runnable task, T result);
-    // 2. Future<T> submit(Callable<T> task);
-    private static void testGetThreadBackValue() {
-        ExecutorService executorService = Executors.newFixedThreadPool(1);
-        // 使用线程池中的线程来异步执行, 等待结束后获取返回数据为止
-        Future<String> future = executorService.submit(() -> "Back value");
-        try {
-            // TODO: 获取返回值时会阻塞当前(main)线程, 不可在UI线程中使用
-            // Waits if necessary for the computation to complete, and then retrieves its result.
-            System.out.println(future.get());
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-        executorService.shutdown();
-    }
-
-    public void testSendRequestAsync() {
-        ExecutorService executorService = Executors.newFixedThreadPool(1);
-        Future<String> future = executorService.submit(() -> "back value");
-        try {
-            // 只会做一次判断，之后获取数据的时候，仍然会阻塞当前的线程
-            if (future.isDone()) {
-                // Wait until a response is received
-                String responseJson = future.get();
-                // Send http request
-            }
-        } catch (Exception exception) {
-            // Restore interrupted state...
             Thread.currentThread().interrupt();
         }
     }

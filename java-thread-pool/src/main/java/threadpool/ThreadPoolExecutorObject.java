@@ -18,7 +18,7 @@ import java.util.concurrent.*;
 //       5. Impl RejectedExecutionHandler接口，自定义策略
 //    ...
 // }
-public class ThreadPoolObject {
+public class ThreadPoolExecutorObject {
 
     // 线程复用机制：如果线程完成task之后，再去做别的等待执行的task
     public static ExecutorService newCachedThreadPool() {
