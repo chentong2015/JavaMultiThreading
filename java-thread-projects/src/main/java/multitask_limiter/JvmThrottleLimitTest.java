@@ -1,37 +1,26 @@
 package multitask_limiter;
 
-// TODO. 模拟最多只有throttleLimit个线程在并发执行
-// - 设置能并发运行的线程数限制THROTTLE_LIMIT
-// - 使用有限的并发线程处理大量的Task任务，同一时刻运行的Task不超过LIMIT
+import java.util.Random;
+
+// 模拟最多只有throttleLimit个线程在并发执行
 public class JvmThrottleLimitTest {
 
     public static final int THROTTLE_LIMIT = 5;
 
-    public static void main(String[] args) {
-        CustomThrottleLimitImpl throttleLimitImpl = new CustomThrottleLimitImpl(THROTTLE_LIMIT);
+    public static void main(String[] args) throws InterruptedException {
+        CustomThrottleLimiter throttleLimitImpl = new CustomThrottleLimiter(THROTTLE_LIMIT);
 
-        // 多线程的并发数量限制在THROTTLE_LIMIT数量
-        for (int n = 0; n < THROTTLE_LIMIT; n++) {
-            new Thread(() -> {
-                try {
-                    throttleLimitImpl.runTask();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }).start();
-        }
-
-        // 提供多个Task任务交给并发线程执行
+        Random random = new Random();
         for (int n = 0; n < 15; n++) {
-            int finalN = n;
-            new Thread(() -> {
-                try {
-                    String taskName = "index " + finalN;
-                    throttleLimitImpl.putTask(new CustomTaskRunnable(taskName));
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }).start();
+            String taskName = "index " + n;
+            throttleLimitImpl.putTask(new CustomTask(taskName, random.nextInt(1, 5)));
         }
+        throttleLimitImpl.runTask();
+
+        for (int n = 20; n < 25; n++) {
+            String taskName = "index " + n;
+            throttleLimitImpl.putTask(new CustomTask(taskName, random.nextInt(1, 5)));
+        }
+        throttleLimitImpl.runTask();
     }
 }

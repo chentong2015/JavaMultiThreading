@@ -1,4 +1,4 @@
-package java_thread.thread_lifecycle;
+package java_thread.lifecycle;
 
 public class JavaThreadStopSleep {
 

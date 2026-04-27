@@ -15,3 +15,11 @@ TODO: Java线程的实现: 基于KLT(Kernel Level Thread)
 3. 线程调度方式：抢占式(Preemptive BaseThread-Scheduling), 可能会造成线程饥饿
 4. 每个线程由OS来分配执行的时间，线程的切换不由线程本身决定，最终的调度由OS决定
 
+
+TODO. Java线程的启动和调度(基于JMM模型)
+具体线程的调度完全交给JVM和OS来决定，输出的顺序不可保证
+线程启动方法会调用到本地方法
+new Thread().start()
+  private native void start0();
+    openjdk 调用c语言实现的方法
+       os   调用os中的线程的启动

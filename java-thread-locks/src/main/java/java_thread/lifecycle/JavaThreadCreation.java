@@ -1,12 +1,6 @@
-package java_thread.thread_lifecycle;
+package java_thread.lifecycle;
 
-import java.util.concurrent.ThreadFactory;
-
-// TODO. 创建线程的四种形式，本质上都需要实现Runnable接口
-// 1. 自定义实现Runnable接口
-// 2. 通过继承Thread类型(Thread本身实现Runnable接口)
-// 3. 使用匿名类型来创建线程
-// 4. 自定义ThreadFactory线程工厂来创建线程
+// TODO. 本质上只有一种创建Java线程的方式: 实现Runnable接口
 public class JavaThreadCreation {
 
     static class DemoRunnable implements Runnable {
@@ -44,17 +38,23 @@ public class JavaThreadCreation {
         }.start();
     }
 
-    // TODO. 本质上是创建一个线程工厂，提供创建线程的自定义方式
-    public void testThreadFactory() {
-        ThreadFactory myThreadFactory = new ThreadFactory() {
-            @Override
-            public Thread newThread(Runnable runnable) {
-                // Create new thread by Runnable Impl
-                return new Thread(runnable);
-            }
-        };
-        myThreadFactory.newThread(() -> {
-            System.out.println("Impl Runnable");
-        }).start();
+    // TODO. 注意多次线程run()调用和start()启动的不同
+    public static void main(String[] args) {
+        // 线程的优先级只是给OS参考，并非确定的执行顺序
+        Thread runThread = new Thread(new DemoRunnable());
+        runThread.setPriority(10);
+        runThread.start();
+
+        DemoThread demoThread = new DemoThread();
+        demoThread.setName("Name");
+
+        // .run() 方法级别的调用: 等效于调主线程的run()方法，始终只在一个线程
+        demoThread.run();
+
+        // .start() 线程级别的调用: 会创建新的线程，并自动调用线程的run()方法
+        demoThread.start();
+
+        // 同一个线程不能.start()启动多次，否则抛出IllegalThreadStateException
+        // demoThread.start();
     }
 }
