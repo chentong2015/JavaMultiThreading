@@ -1,4 +1,4 @@
-package features.Volatile;
+package features;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ import java.util.Map;
 //        使用volatile修饰的变量会在"Access flags"上做标记，通过标记，在执行时通过汇编指令来实现
 //    > 运行阶段，加了内存屏障，CPU无法乱序执行，只能按照顺序执行
 //        重排时不允许后面的指令重排到屏障之前, 保证代码的执行顺序和程序的顺序相同
-public class BaseVolatile {
+public class VolatileFeature {
 
     // JVM的即时编译器具有指令重排优化 ==> 由于CPU的乱序执行造成
     // 1. 处理器会对输入代码乱序执行优化(Out-Of-Order Execution), 然后对结果重组, 保证和程序"顺序执行"结果一致

@@ -1,4 +1,4 @@
-package locks;
+package locks.upgrade;
 
 // 测试锁升级的过程
 // 1. JVM默认延时4s自动开启偏向锁，通过设置-XX:BiasedLockingStartupDelay=0来取消延时

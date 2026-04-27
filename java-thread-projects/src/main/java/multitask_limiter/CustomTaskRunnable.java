@@ -2,19 +2,18 @@ package multitask_limiter;
 
 public class CustomTaskRunnable implements Runnable {
 
-    private final CustomThrottleLimitImpl throttleLimitImplCopy;
+    private final String taskName;
 
-    public CustomTaskRunnable(CustomThrottleLimitImpl implCopy) {
-        this.throttleLimitImplCopy = implCopy;
+    public CustomTaskRunnable(String taskName) {
+        this.taskName = taskName;
     }
 
     @Override
     public void run() {
        try {
-           System.out.println("Run CustomTaskRunnable");
+           System.out.println("Run CustomTaskRunnable " + taskName + " by " + Thread.currentThread().getName());
            Thread.sleep(5000);
-
-           this.throttleLimitImplCopy.releaseExecution();
+           System.out.println("Finish Run CustomTaskRunnable " + taskName + " by " + Thread.currentThread().getName());
        } catch (InterruptedException e) {
            throw new RuntimeException(e);
        }

@@ -7,14 +7,14 @@ public class JvmThrottleLimitTest {
 
     public static final int THROTTLE_LIMIT = 5;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         CustomThrottleLimitImpl throttleLimitImpl = new CustomThrottleLimitImpl(THROTTLE_LIMIT);
 
         // 多线程的并发数量限制在THROTTLE_LIMIT数量
         for (int n = 0; n < THROTTLE_LIMIT; n++) {
             new Thread(() -> {
                 try {
-                    throttleLimitImpl.take().run();
+                    throttleLimitImpl.runTask();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -23,9 +23,11 @@ public class JvmThrottleLimitTest {
 
         // 提供多个Task任务交给并发线程执行
         for (int n = 0; n < 15; n++) {
+            int finalN = n;
             new Thread(() -> {
                 try {
-                    throttleLimitImpl.put(new CustomTaskRunnable(throttleLimitImpl));
+                    String taskName = "index " + finalN;
+                    throttleLimitImpl.putTask(new CustomTaskRunnable(taskName));
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

@@ -1,11 +1,11 @@
-package concurrent_tools.countdown;
+package concurrent_tools.countdown_latch;
 
 import java.util.concurrent.CountDownLatch;
 
 // TODO. CountDownLatch 倒计时锁存器
 // 允许一个或多个线程，等待其他一组线程完成操作，再继续执行
 // 需要确保某一个线程在其他一个或者多个优先级线程完成之后，再执行
-public class CountDownDemo {
+public class CountDownLatchDemo {
 
     private static CountDownLatch c1 = new CountDownLatch(1);
     private static CountDownLatch c2 = new CountDownLatch(1);

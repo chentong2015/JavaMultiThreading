@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 // 2. 乐观锁: 始终考虑修改共享数据时不会线程竞争
 // 3. 自旋锁: 线性没有被打断或者阻塞
 // 4. 轻量级锁: 消耗的系统资源较低            ===> 不考虑线程阻塞和操作系统线程调度的问题 !!
-
+//
 // 操作系统层面的指令，多个线程同时执行时有先后顺序
 // 1. 类似数据库中的乐观锁定Compare and Swap，比较判断的逻辑是一致的，会产生判断和回滚
 // 2. 等效于Atomic Type类型中.compareAndSet(expectedValue, newValue)方法
