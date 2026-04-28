@@ -1,3 +1,5 @@
+package threadpool.complete_future;
+
 import java.util.concurrent.*;
 
 // TODO. 并发任务场景:
@@ -5,7 +7,7 @@ import java.util.concurrent.*;
 // 确保两个线程执行结束，获取各自线程的返回结果
 public class TestThreadPoolTasks {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException, TimeoutException {
+    public static void main(String[] args) throws Exception {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<Long> countFuture = executor.submit(() -> {
             System.out.println(Thread.currentThread().getName());
@@ -18,7 +20,7 @@ public class TestThreadPoolTasks {
             return 10L;
         });
 
-        // TODO. 这里会阻塞主线程，导致main线程无法并行 ==> 同步的效果
+        // TODO. 阻塞主线程，导致main线程无法并行 ==> 同步的效果
         long result = countFuture.get(6, TimeUnit.SECONDS);
         System.out.println(result);
 
@@ -34,7 +36,6 @@ public class TestThreadPoolTasks {
         // 如果在timeout的时间内子线程的task还没有结束，则报错
         try {
             Long count = countFuture.get(6, TimeUnit.SECONDS);
-            count = countFuture.get(6, TimeUnit.SECONDS);
             System.out.println("count = " + count);
         } catch (Exception e) {
             e.printStackTrace();

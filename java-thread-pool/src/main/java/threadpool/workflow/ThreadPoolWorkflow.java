@@ -1,4 +1,4 @@
-package threadpool;
+package threadpool.workflow;
 
 import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -7,11 +7,6 @@ import java.util.concurrent.TimeUnit;
 
 // TODO: 根据项目场景定义线程池的合理参数, 线程执行顺序受到OS的调度
 public class ThreadPoolWorkflow {
-
-    public static void main(String[] args) {
-        // testThreadPoolExecutorSuccess();
-        testThreadPoolExecutorFailed();
-    }
 
     // 执行50个并发任务时，线程池中将有10个核心线程+5个非核心线程在工作
     // thread-pool.core-pool-size=10

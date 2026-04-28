@@ -15,7 +15,7 @@ public class ThreadPool {
         Random random = new Random();
         List<Integer> list = new ArrayList<>();
 
-        // 创建2个线程: 一个主线程 + 一个线程池中的线程
+        // 创建2个线程: 一个主线程 + 一个线程池中线程
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         for (int index = 0; index < 1000; index++) {
             executorService.execute(
@@ -37,6 +37,7 @@ public class ThreadPool {
             thread.start(); // 创建多线程，去调用线程的run()方法: 方法级别的调用 !!
             thread.join();  // 等着线程执行结束
         }
+
         for (int index = 0; index < 1000; index++) {
             // threads[index].join(); 等待线程数组中指定的线程结束
         }
