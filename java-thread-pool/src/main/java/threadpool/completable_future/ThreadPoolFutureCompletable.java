@@ -1,4 +1,4 @@
-package threadpool.complete_future;
+package threadpool.completable_future;
 
 import java.util.ArrayList;
 import java.util.List;

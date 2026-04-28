@@ -1,4 +1,4 @@
-package threadpool.complete_future;
+package threadpool.completable_future;
 
 import java.util.concurrent.*;
 
@@ -22,22 +22,6 @@ public class ThreadPoolFuture {
         System.out.println("Finish result");
         System.out.println(future.isDone());
 
-        executorService.shutdown();
-    }
-
-    // TODO. Get获取结果时自动捕获线程池中线程的异常, 使得外部可见
-    public static void main2(String[] args) {
-        ExecutorService executorService = Executors.newFixedThreadPool(1);
-        Future<String> future = executorService.submit(() -> {
-            System.out.println("Inside Thread message");
-            throw new RuntimeException("Inside exception !");
-        });
-
-        try {
-            System.out.println(future.get());
-        } catch (Exception exception) {
-            System.out.println("Catch exception: " + exception.getMessage());
-        }
         executorService.shutdown();
     }
 }
