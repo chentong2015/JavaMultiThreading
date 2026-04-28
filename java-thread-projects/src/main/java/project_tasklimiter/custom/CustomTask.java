@@ -1,7 +1,5 @@
 package project_tasklimiter.custom;
 
-import java.util.Random;
-
 public class CustomTask implements Runnable {
 
     private final String taskName;

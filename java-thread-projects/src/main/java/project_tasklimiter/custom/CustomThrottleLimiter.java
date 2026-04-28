@@ -1,5 +1,6 @@
 package project_tasklimiter.custom;
 
+import java.util.Comparator;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.Semaphore;
@@ -13,7 +14,13 @@ public class CustomThrottleLimiter {
     private final BlockingQueue<CustomTask> blockingTaskQueue;
 
     public CustomThrottleLimiter(int throttleLimit) {
-        this.blockingTaskQueue = new PriorityBlockingQueue<>(throttleLimit, new CustomTaskComparator());
+        // 定义Task优先级排序的规则
+        this.blockingTaskQueue = new PriorityBlockingQueue<>(throttleLimit, new Comparator<CustomTask>() {
+            @Override
+            public int compare(CustomTask task1, CustomTask task2) {
+                return task1.getPriority() - task2.getPriority();
+            }
+        });
         this.semaphore = new Semaphore(throttleLimit);
     }
 

@@ -3,7 +3,7 @@ package project_tasklimiter.custom;
 import java.util.Random;
 
 // 模拟最多只有throttleLimit个线程在并发执行
-public class JvmThrottleLimitTest {
+public class CustomThrottleLimiterTest {
 
     public static final int THROTTLE_LIMIT = 5;
 

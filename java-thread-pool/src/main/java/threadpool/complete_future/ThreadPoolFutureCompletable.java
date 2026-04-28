@@ -34,7 +34,7 @@ public class ThreadPoolFutureCompletable {
         executorService.shutdown();
     }
 
-    // 第一次join等待，第二次join直接取值(无阻塞)
+    // TODO. 第一次join等待，第二次join直接取值(无阻塞)
     public void test(List<CompletableFuture<Long>> futuresCount) {
         CompletableFuture.allOf(futuresCount.toArray(new CompletableFuture[0]))
                 .orTimeout(45, TimeUnit.MINUTES)
