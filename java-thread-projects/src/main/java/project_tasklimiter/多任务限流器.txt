@@ -3,7 +3,7 @@
 - 超过限流数量的任务将被放到缓存队列中等待执行
 - 任务管理器需要不定时的接受新任务
 - 不同Task任务执行时间不同
-- 不同任务Priority优先级高的先执行
+- 不同任务Priority优先级高的先执行(从小到大)
 
 TODO. 线程池的实现
 ThreadPoolExecutor executor = new ThreadPoolExecutor(

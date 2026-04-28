@@ -1,4 +1,4 @@
-package producer_consumer.blocking_queue;
+package consumer_producer.blocking_queue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
@@ -22,6 +22,7 @@ public class BlockingProducer implements Runnable {
                 e.printStackTrace();
             }
         }
+
         try {
             queue.put("EOF");
         } catch (InterruptedException e) {

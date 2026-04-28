@@ -35,7 +35,6 @@ public class PackageRunningManager {
                 System.out.println("Concurrent: The package is running : " + label);
                 return;
             }
-
             // 同一时刻只有一个线程能够记录(修改)Package的运行状态
             addRunningPackage(packageId);
 
@@ -48,11 +47,11 @@ public class PackageRunningManager {
                         throw new RuntimeException(e);
                     }
                     System.out.println("Finish running package : " + label);
-                    // 在异步的线程执行接受后，必须移除当前packageId
+                    // 在异步的线程执行完毕后，必须移除当前packageId
                     removeRunningPackage(packageId);
                 }).start();
             } catch (Exception exception){
-                // 如果执行的过程中出现异常，必须保证移除packageId
+                // 如果启动异步线程时出现异常，必须保证移除packageId
                 removeRunningPackage(packageId);
             }
         }

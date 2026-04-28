@@ -1,4 +1,4 @@
-package producer_consumer.reentrantLock;
+package consumer_producer.reentrantLock;
 
 import java.util.List;
 import java.util.Random;

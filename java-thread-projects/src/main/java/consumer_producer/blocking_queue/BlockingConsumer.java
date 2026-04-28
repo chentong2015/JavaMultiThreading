@@ -1,4 +1,4 @@
-package producer_consumer.blocking_queue;
+package consumer_producer.blocking_queue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
@@ -12,12 +12,14 @@ public class BlockingConsumer implements Runnable {
         this.queue = buffer;
     }
 
+    // 在消费端循环监听队列中是否有新的信息
     @Override
     public void run() {
         while (true) {
             if (queue.isEmpty()) {
                 continue;
             }
+
             if (queue.peek().equals("EOF")) {
                 System.out.println("Existing..");
                 break;

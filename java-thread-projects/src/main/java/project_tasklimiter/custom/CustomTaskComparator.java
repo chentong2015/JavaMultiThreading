@@ -1,4 +1,4 @@
-package multitask_limiter;
+package project_tasklimiter.custom;
 
 import java.util.Comparator;
 
@@ -7,6 +7,6 @@ public class CustomTaskComparator implements Comparator<CustomTask> {
 
     @Override
     public int compare(CustomTask task1, CustomTask task2) {
-        return task2.getPriority() - task1.getPriority();
+        return task1.getPriority() - task2.getPriority();
     }
 }

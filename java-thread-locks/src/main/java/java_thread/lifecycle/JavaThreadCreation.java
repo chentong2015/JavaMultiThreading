@@ -1,13 +1,12 @@
 package java_thread.lifecycle;
 
-// TODO. 本质上只有一种创建Java线程的方式: 实现Runnable接口
+// TODO. 本质上只有一种方式创建Java线程: 实现Runnable接口, 实现run()方法逻辑
 public class JavaThreadCreation {
 
     static class DemoRunnable implements Runnable {
         @Override
         public void run() {
             System.out.println("Runnable thread");
-            // Do something
         }
     }
 
@@ -15,7 +14,6 @@ public class JavaThreadCreation {
         @Override
         public void run() {
             System.out.println(currentThread().getName());
-            // Do something
         }
     }
 
@@ -38,7 +36,7 @@ public class JavaThreadCreation {
         }.start();
     }
 
-    // TODO. 注意多次线程run()调用和start()启动的不同
+    // TODO. 注意run()方法级别和start()线程级别调用
     public static void main(String[] args) {
         // 线程的优先级只是给OS参考，并非确定的执行顺序
         Thread runThread = new Thread(new DemoRunnable());
@@ -47,13 +45,11 @@ public class JavaThreadCreation {
 
         DemoThread demoThread = new DemoThread();
         demoThread.setName("Name");
-
         // .run() 方法级别的调用: 等效于调主线程的run()方法，始终只在一个线程
         demoThread.run();
 
         // .start() 线程级别的调用: 会创建新的线程，并自动调用线程的run()方法
         demoThread.start();
-
         // 同一个线程不能.start()启动多次，否则抛出IllegalThreadStateException
         // demoThread.start();
     }

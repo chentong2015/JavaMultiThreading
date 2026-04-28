@@ -1,4 +1,4 @@
-package multitask_limiter;
+package project_tasklimiter.custom;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
@@ -21,15 +21,16 @@ public class CustomThrottleLimiter {
         this.blockingTaskQueue.add(task);
     }
 
+    // 使用while循环, 判断是否还有任务需要执行
     public void runTask() throws InterruptedException {
         while (true) {
             this.semaphore.acquire();
-            System.out.println("Get Semaphore permit");
             if (this.blockingTaskQueue.isEmpty()) {
                 this.semaphore.release();
                 break;
             }
 
+            // TODO. 每次执行任务都需要创建新线程(开销很大)，无法重用
             CustomTask customTask = this.blockingTaskQueue.take();
             new Thread(() -> {
                try {
@@ -37,7 +38,7 @@ public class CustomThrottleLimiter {
                } finally {
                    this.semaphore.release(); // 确保异步线程能够释放Permit
                }
-            }).start(); // 新创建异步线程运行, 造成新线程开销 => 重用线程
+            }).start();
         }
     }
 }

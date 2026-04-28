@@ -1,4 +1,4 @@
-package multitask_limiter;
+package project_tasklimiter.custom;
 
 import java.util.Random;
 
@@ -17,7 +17,7 @@ public class CustomTask implements Runnable {
        try {
            String threadName = Thread.currentThread().getName();
            System.out.println("Run " + taskName + " by " + threadName + " with priority: " + priority);
-           Thread.sleep(new Random().nextInt(1000, 5000));
+           Thread.sleep(3000);
            System.out.println("Finish Run " + taskName + " by " + threadName + " with priority: " + priority);
        } catch (InterruptedException e) {
            throw new RuntimeException(e);

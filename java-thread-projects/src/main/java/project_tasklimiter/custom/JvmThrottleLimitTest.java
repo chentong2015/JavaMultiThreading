@@ -1,4 +1,4 @@
-package multitask_limiter;
+package project_tasklimiter.custom;
 
 import java.util.Random;
 

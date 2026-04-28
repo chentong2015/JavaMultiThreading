@@ -1,4 +1,4 @@
-package producer_consumer.synchronize;
+package consumer_producer.synchronize;
 
 import java.util.List;
 
