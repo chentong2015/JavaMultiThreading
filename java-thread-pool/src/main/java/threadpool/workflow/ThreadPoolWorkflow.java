@@ -12,7 +12,7 @@ public class ThreadPoolWorkflow {
     // thread-pool.core-pool-size=10
     // thread-pool.max-pool-size=20
     // thread-pool.queue-capacity=35
-    public static void testThreadPoolExecutorSuccess() {
+    public static void main(String[] args) {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
                 10,
                 20,

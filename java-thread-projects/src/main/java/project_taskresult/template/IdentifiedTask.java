@@ -1,4 +1,4 @@
-package project_tasksmanager.template;
+package project_taskresult.template;
 
 import java.util.concurrent.Callable;
 

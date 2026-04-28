@@ -1,4 +1,4 @@
-package project_tasksmanager;
+package project_taskresult;
 
 import java.util.List;
 import java.util.concurrent.*;
