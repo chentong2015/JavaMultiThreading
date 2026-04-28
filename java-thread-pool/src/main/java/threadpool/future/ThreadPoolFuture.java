@@ -1,4 +1,4 @@
-package threadpool.completable_future;
+package threadpool.future;
 
 import java.util.concurrent.*;
 

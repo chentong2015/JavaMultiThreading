@@ -1,4 +1,4 @@
-package threadpool.completable_future;
+package project_taskwait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,17 +25,18 @@ public class ThreadPoolFutureCompletable {
 
         // TODO. 用allOf等全部完成 -> 用join取结果 -> joining拼接
         String result = CompletableFuture.allOf(futureList.toArray(new CompletableFuture[0]))
-                .orTimeout(1, TimeUnit.MINUTES)
+                .orTimeout(3, TimeUnit.SECONDS)  // 避免永久等待
                 .thenApply(v -> futureList.stream()
-                        .map(CompletableFuture::join)
+                        .map(CompletableFuture::join)   // 不再阻塞，直接获取
                         .collect(Collectors.joining(":"))
-                ).join();
+                ).join(); // 阻塞等待全部
+
         System.out.println(result);
         executorService.shutdown();
     }
 
     // TODO. 第一次join等待，第二次join直接取值(无阻塞)
-    public void test(List<CompletableFuture<Long>> futuresCount) {
+    public void waitAllFuturesCount(List<CompletableFuture<Long>> futuresCount) {
         CompletableFuture.allOf(futuresCount.toArray(new CompletableFuture[0]))
                 .orTimeout(45, TimeUnit.MINUTES)
                 .join();

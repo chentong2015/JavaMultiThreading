@@ -1,10 +1,11 @@
 package java_thread.lifecycle;
 
-public class JavaThreadStopSleep {
+public class JavaThreadSleepStop {
 
-    // TODO: 线程的Sleep休眠，调用底层的OS去将线程sleep相应时间(可能OS无法支持纳秒级别)
+    // TODO: 线程的Sleep休眠，调用底层的OS去将线程sleep相应时间
     //  - sleep()期间不会释放掉线程所拥有的锁，造成并发问题
     //  - sleep()期间的线程可能被"中断"，抛出中断异常
+    //  - sleep()的调用可能引起性能问题
     public static void main(String[] args) {
         try {
             // 如果线程没有被中断打扰，则会在3S时间后自动唤醒
@@ -14,8 +15,6 @@ public class JavaThreadStopSleep {
             // 线程在sleep期间被中断
             System.out.println("Thread interrupt");
         }
-        testThreadInterrupted();
-        testThreadStop();
     }
 
     // TODO. 线程的中断interrupt()
