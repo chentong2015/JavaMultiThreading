@@ -1,4 +1,4 @@
-package java_thread_communication.exchanger;
+package java_thread.thread_notify.exchanger;
 
 import java.util.concurrent.Exchanger;
 

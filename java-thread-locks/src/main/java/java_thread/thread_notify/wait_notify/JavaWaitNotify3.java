@@ -1,4 +1,4 @@
-package java_thread_communication.wait_notify;
+package java_thread.thread_notify.wait_notify;
 
 // TODO. 使用Wait Notify实现三个线程的顺序执行
 public class JavaWaitNotify3 {
