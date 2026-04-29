@@ -1,4 +1,4 @@
-package multitask_wait.completable_future.project;
+package multitask_wait.project;
 
 import java.util.Objects;
 import java.util.concurrent.Callable;

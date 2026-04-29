@@ -15,12 +15,7 @@ public class CustomThrottleLimiter {
 
     public CustomThrottleLimiter(int throttleLimit) {
         // 定义Task优先级排序的规则
-        this.blockingTaskQueue = new PriorityBlockingQueue<>(throttleLimit, new Comparator<CustomTask>() {
-            @Override
-            public int compare(CustomTask task1, CustomTask task2) {
-                return task1.getPriority() - task2.getPriority();
-            }
-        });
+        this.blockingTaskQueue = new PriorityBlockingQueue<>(throttleLimit, Comparator.comparingInt(CustomTask::getPriority));
         this.semaphore = new Semaphore(throttleLimit);
     }
 

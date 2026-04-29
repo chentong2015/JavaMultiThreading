@@ -7,7 +7,6 @@ import java.util.concurrent.*;
 // 2. Future<T> submit(Callable<T> task);
 public class AsyncTaskResultFuture {
 
-    // TODO. 直接Get获取返回结果会阻塞当前线程
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         Future<String> future = executorService.submit(() -> {
@@ -15,12 +14,25 @@ public class AsyncTaskResultFuture {
             return "Back value";
         });
 
-        // Waits if necessary for the computation to complete, and then retrieves its result.
-        System.out.println(future.get());
-        System.out.println(future.get(6, TimeUnit.SECONDS));
+        Thread.sleep(2500);
+
+        // 选择中断任务的执行，如果正在运行则Interrupt
+        future.cancel(true);
+
+        if (future.isCancelled()) {
+            System.out.println("Task has been cancelled");
+        } else {
+            // TODO. 调用Get获取结果会阻塞当前线程
+            // 调用Get带线程中抛出的异常: CancellationException表示任务被取消
+            // 调用Get无法获取到以取消任务的结果
+            System.out.println(future.get());
+
+            // 支持多次获取同一个future的结果
+            System.out.println(future.get(6, TimeUnit.SECONDS));
+            System.out.println(future.isDone());
+        }
 
         System.out.println("Finish result");
-        System.out.println(future.isDone());
         executorService.shutdown();
     }
 }
