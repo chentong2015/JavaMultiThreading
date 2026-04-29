@@ -10,8 +10,8 @@ public class ParkThread {
     public void testParkLock() {
         synchronized(lock) {
             // 持有锁
-            LockSupport.park(); // 挂起，但不会释放 `lock`
-            // 被 unpark 之后，依然持有 `lock`
+            LockSupport.park(); // 挂起但不会释放lock
+            // 被unpark之后依然持有lock
         }
     }
 

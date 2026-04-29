@@ -1,4 +1,4 @@
-TODO. 使用线程池化技术来提升系统性能
+TODO. 线程池化技术 + 接合CP连接池: 提升后端系统性能
 Thread Pool creates new java_thread as needed, reuse previously java_thread when available.
 If no existing thread is available, a new thread will be created and added to the pool.
 
