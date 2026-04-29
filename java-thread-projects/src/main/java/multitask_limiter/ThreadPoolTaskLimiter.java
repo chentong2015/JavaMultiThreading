@@ -1,6 +1,6 @@
-package project_tasklimiter;
+package multitask_limiter;
 
-import project_tasklimiter.custom.CustomTask;
+import multitask_limiter.custom.CustomTask;
 
 import java.util.Comparator;
 import java.util.Random;

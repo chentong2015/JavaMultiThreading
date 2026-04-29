@@ -1,11 +1,11 @@
-package threadpool.future;
+package multitask_wait;
 
 import java.util.concurrent.*;
 
-// TODO. 获取线程池中线程执行后的返回值
+// TODO. 获取并发线程执行后的返回值
 // 1. Future<T> submit(Runnable task, T result);
 // 2. Future<T> submit(Callable<T> task);
-public class ThreadPoolFuture {
+public class AsyncTaskResultFuture {
 
     // TODO. 直接Get获取返回结果会阻塞当前线程
     public static void main(String[] args) throws Exception {
@@ -21,7 +21,6 @@ public class ThreadPoolFuture {
 
         System.out.println("Finish result");
         System.out.println(future.isDone());
-
         executorService.shutdown();
     }
 }

@@ -1,4 +1,4 @@
-package project_tasklimiter.custom;
+package multitask_limiter.custom;
 
 import java.util.Comparator;
 import java.util.concurrent.BlockingQueue;
