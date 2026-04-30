@@ -2,9 +2,9 @@ package concurrent_tools.semaphore;
 
 import java.util.concurrent.Semaphore;
 
-// TODO. Semaphore 信号量
-// 它通过控制一定数量的许可(permit)来限制通用资源访问
-// 例如控制并发的线程数, 流量控制, 公用资源访问控制
+// TODO. Semaphore 信号量: 控制一定数量的许可(permit)来限制执行
+// acquire和release需要成对出现且在同一个执行上下文(例如try-finally)
+// Semaphore常用于控制并发的线程数, 流量控制, 公用资源访问控制
 public class SemaphoreDemo {
 
     public void testSemaphore() throws InterruptedException {

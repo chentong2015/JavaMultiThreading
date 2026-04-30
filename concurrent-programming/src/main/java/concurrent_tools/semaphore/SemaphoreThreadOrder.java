@@ -5,6 +5,7 @@ import java.util.concurrent.Semaphore;
 // TODO. 通过Semaphore信号量控制线程的执行顺序
 public class SemaphoreThreadOrder {
 
+    // 初始化不设置Permit许可
     private static Semaphore semaphore1 = new Semaphore(0);
     private static Semaphore semaphore2 = new Semaphore(0);
 

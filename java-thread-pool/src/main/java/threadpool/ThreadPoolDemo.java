@@ -15,7 +15,6 @@ public class ThreadPoolDemo {
         Random random = new Random();
         List<Integer> list = new ArrayList<>();
 
-        // 创建2个线程: 一个主线程 + 一个线程池中线程
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         for (int index = 0; index < 1000; index++) {
             executorService.execute(

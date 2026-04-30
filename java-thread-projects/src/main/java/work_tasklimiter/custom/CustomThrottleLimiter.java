@@ -13,6 +13,9 @@ public class CustomThrottleLimiter {
     // 默认最小堆Min-Heap, 需要使用最大堆排序
     private final BlockingQueue<CustomTask> blockingTaskQueue;
 
+    // TODO. throttleLimit 相关问题
+    // 1. throttleLimit参数的值应该有限制范围
+    // 2. queue队列中存储的数据大小需要考虑OOM
     public CustomThrottleLimiter(int throttleLimit) {
         // 定义Task优先级排序的规则
         this.blockingTaskQueue = new PriorityBlockingQueue<>(throttleLimit, Comparator.comparingInt(CustomTask::getPriority));

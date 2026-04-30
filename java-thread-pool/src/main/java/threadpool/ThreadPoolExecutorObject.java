@@ -5,8 +5,8 @@ import java.util.concurrent.*;
 // TODO. ThreadPoolExecutor 线程池对象
 // public ThreadPoolExecutor(
 //    int corePoolSize,    核心线程数量
-//    int maximumPoolSize, 最大线程数目: corePoolSize+非核心线程
-//    long keepAliveTime,  时间值: 非核心线程的生命周期, 活跃时间
+//    int maximumPoolSize, 最大线程数目: corePoolSize + 非核心线程
+//    long keepAliveTime,  时间值: 非核心线程的生命周期, 活跃的等待时间
 //    TimeUnit unit,       时间单位
 //    BlockingQueue<Runnable> workQueue,  阻塞队列, 用于存放等待被执行的任务
 //    ThreadFactory threadFactory,        由ThreadFactory创建线程
@@ -20,7 +20,9 @@ import java.util.concurrent.*;
 // }
 public class ThreadPoolExecutorObject {
 
-    // 线程复用机制：如果线程完成task之后，再去做别的等待执行的task
+    // TODO. 将coreSize和maxSize设置成相同数目能够防止线程池中线程"抖动"
+    // 使用最大数目的maxSize没有太大的意义
+    // 最大的并发线程数受到内核线程的限制
     public static ExecutorService newCachedThreadPool() {
         return new ThreadPoolExecutor(0,
                 Integer.MAX_VALUE,
@@ -29,7 +31,7 @@ public class ThreadPoolExecutorObject {
                 new SynchronousQueue<>());
     }
 
-    // 链表阻塞队列: 有界队列, 容量为Integer.MAX_VALUE, 足够容纳线程数目
+    // 链表阻塞队列: 有界队列容量为Integer.MAX_VALUE, 足够容纳线程数目
     public static ExecutorService newFixedThreadPool(int nThreads) {
         return new ThreadPoolExecutor(nThreads,
                 nThreads,

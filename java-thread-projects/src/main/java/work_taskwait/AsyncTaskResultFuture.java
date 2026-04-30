@@ -2,7 +2,7 @@ package work_taskwait;
 
 import java.util.concurrent.*;
 
-// TODO. 获取并发线程执行后的返回值
+// TODO. 获取submit()并发线程执行后的返回值
 // 1. Future<T> submit(Runnable task, T result);
 // 2. Future<T> submit(Callable<T> task);
 public class AsyncTaskResultFuture {
