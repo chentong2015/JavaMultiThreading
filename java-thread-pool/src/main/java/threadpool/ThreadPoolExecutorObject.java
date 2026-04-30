@@ -20,9 +20,7 @@ import java.util.concurrent.*;
 // }
 public class ThreadPoolExecutorObject {
 
-    // TODO. 将coreSize和maxSize设置成相同数目能够防止线程池中线程"抖动"
-    // 使用最大数目的maxSize没有太大的意义
-    // 最大的并发线程数受到内核线程的限制
+    // 最大数目的maxSize没有意义, 并发线程数受到内核线程限制
     public static ExecutorService newCachedThreadPool() {
         return new ThreadPoolExecutor(0,
                 Integer.MAX_VALUE,
@@ -40,7 +38,8 @@ public class ThreadPoolExecutorObject {
                 new LinkedBlockingQueue<>());
     }
 
-    // 只有一个核心线程负责执行task，其他的task全部放到阻塞线程队列中
+    // TODO. 将coreSize和maxSize设置成相同数目能够防止线程池中线程"抖动"
+    // 只有一个核心线程负责执行task, 其他的task全部放到阻塞线程队列中
     public static ExecutorService newSingleThreadExecutor() {
         return new ThreadPoolExecutor(1,
                 1,

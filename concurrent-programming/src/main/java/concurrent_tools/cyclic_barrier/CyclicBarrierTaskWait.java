@@ -3,7 +3,7 @@ package concurrent_tools.cyclic_barrier;
 import java.util.concurrent.*;
 
 // 项目场景: 等待一定数量的线程共同执行Audit发送和Log日志记录
-public class CyclicBarrierProject {
+public class CyclicBarrierTaskWait {
 
     private static final int NB_THREADS_SENDER = 5;
     private final ExecutorService executorServiceSender = Executors.newFixedThreadPool(NB_THREADS_SENDER);

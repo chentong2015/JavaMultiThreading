@@ -5,7 +5,7 @@ import java.util.concurrent.Semaphore;
 // TODO. Semaphore 信号量: 控制一定数量的许可(permit)来限制执行
 // acquire和release需要成对出现且在同一个执行上下文(例如try-finally)
 // Semaphore常用于控制并发的线程数, 流量控制, 公用资源访问控制
-public class SemaphoreDemo {
+public class JavaSemaphore {
 
     public void testSemaphore() throws InterruptedException {
         Semaphore semaphore = new Semaphore(10);

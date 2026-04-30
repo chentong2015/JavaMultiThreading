@@ -6,7 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 // TODO. CyclicBarrier 循环屏障, 可反复使用
 // 让一组线程到达一个屏障(同步点)时被阻塞，直到最后一个线程到达屏障时，所有被屏障拦截的任务才会运行
 // 计数器设置为N, 那么凑齐第一批N个线程后，计数器归零，然后等下一批N线程
-public class CyclicBarrierDemo {
+public class CyclicBarrierOrder {
 
     private static CyclicBarrier barrier1 = new CyclicBarrier(2);
     private static CyclicBarrier barrier2 = new CyclicBarrier(2);

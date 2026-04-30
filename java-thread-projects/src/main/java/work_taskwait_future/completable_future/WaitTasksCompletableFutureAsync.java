@@ -1,4 +1,4 @@
-package work_taskwait.completable_future;
+package work_taskwait_future.completable_future;
 
 import java.util.ArrayList;
 import java.util.List;

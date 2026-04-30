@@ -1,4 +1,4 @@
-package work_taskwait.invokeall;
+package work_taskwait_future.invokeall;
 
 import java.util.Arrays;
 import java.util.List;

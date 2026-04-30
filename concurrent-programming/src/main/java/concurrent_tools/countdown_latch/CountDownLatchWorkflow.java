@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 
 // TODO. 统计多线程任务的并发执行(一起执行)的时间
-public class CountDownLatchTime {
+public class CountDownLatchWorkflow {
 
     // 只有在全部的并发数量准备好之后，才开始记录
     // 只有当全部的并发数量结束完成后，才结束记录

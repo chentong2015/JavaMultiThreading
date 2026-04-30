@@ -1,11 +1,11 @@
-package work_taskwait;
+package work_taskwait_future;
 
 import java.util.concurrent.*;
 
 // TODO. 获取submit()并发线程执行后的返回值
 // 1. Future<T> submit(Runnable task, T result);
 // 2. Future<T> submit(Callable<T> task);
-public class AsyncTaskResultFuture {
+public class AsyncTasksFuture {
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newFixedThreadPool(1);
