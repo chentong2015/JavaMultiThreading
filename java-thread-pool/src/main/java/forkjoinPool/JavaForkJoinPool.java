@@ -7,37 +7,45 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
 import java.util.stream.IntStream;
 
+// TODO. ForkJoinPool 高并发线程池: 专门处理计算密集型任务
+// 1. fork 差分成大量子任务(数量很大)
+// 2. parallel 多线程并行处理子任务(单任务时间比较短)
+// 3. join 合并子任务执行结果
 public class JavaForkJoinPool {
 
-    // TODO. Stream.parallel() 会使用全局的ForkJoinPool.commonPool()
-    private static void parallelExecution() {
-        IntStream.range(0, 100).parallel().forEach(i -> {
-            System.out.println(Thread.currentThread().getName());
-        });
-    }
-
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        long startTime = System.currentTimeMillis();
+    public static void main(String[] args) throws Exception {
         List<String> partitions = new ArrayList<>();
-        for (int index = 0; index < 500000; index++) {
+        for (int index = 0; index < 10; index++) {
             partitions.add("partition: " + index);
         }
 
+        // TODO. 使用自定义的线程池来并发处理sub_streams流
         ForkJoinPool forkJoinPool = new ForkJoinPool(10);
-        Future<Long> future = forkJoinPool.submit(() ->
+        Future<Long> future1 = forkJoinPool.submit(() ->
               partitions.parallelStream()
-                      .map(partition -> partition + "::")
+                      .map(partition -> {
+                          // ForkJoinPool-1-worker-x 不同线程并发处理
+                          System.out.println(Thread.currentThread().getName());
+                          return partition + "::";
+                      })
                       .mapToLong(String::length)
                       .sum()
         );
-        System.out.println(future.get());
+        System.out.println("Future 1 test");
+        System.out.println(future1.get());
 
-        // long result = partitions.parallelStream()
-        //         .map(partition -> partition + "::")
-        //         .mapToLong(String::length)
-        //         .sum();
-        // System.out.println(result);
-
-        System.out.println(System.currentTimeMillis() - startTime);
+        // TODO. 始终只有一个子线程处理全部stream流，没有并发效果
+        Future<Long> future2 = forkJoinPool.submit(() ->
+                partitions.stream()
+                        .map(partition -> {
+                            // ForkJoinPool-1-worker-1 单线程处理
+                            System.out.println(Thread.currentThread().getName());
+                            return partition + "::";
+                        })
+                        .mapToLong(String::length)
+                        .sum()
+        );
+        System.out.println("Future 2 test");
+        System.out.println(future2.get());
     }
 }
