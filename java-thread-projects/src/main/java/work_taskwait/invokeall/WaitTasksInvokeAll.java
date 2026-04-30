@@ -1,4 +1,4 @@
-package multitask_wait.invokeall;
+package work_taskwait.invokeall;
 
 import java.util.Arrays;
 import java.util.List;

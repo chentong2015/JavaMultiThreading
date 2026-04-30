@@ -1,4 +1,4 @@
-package multitask_wait.completable_future;
+package work_taskwait.completable_future;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;

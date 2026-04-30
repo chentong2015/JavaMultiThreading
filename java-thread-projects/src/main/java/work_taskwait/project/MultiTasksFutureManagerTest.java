@@ -1,4 +1,4 @@
-package multitask_wait.project;
+package work_taskwait.project;
 
 import java.util.Arrays;
 import java.util.List;

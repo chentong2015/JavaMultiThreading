@@ -1,4 +1,4 @@
-package multitask_wait.project;
+package work_taskwait.project;
 
 import java.util.Objects;
 import java.util.concurrent.Callable;

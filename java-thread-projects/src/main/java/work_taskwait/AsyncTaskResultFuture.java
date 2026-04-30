@@ -1,4 +1,4 @@
-package multitask_wait;
+package work_taskwait;
 
 import java.util.concurrent.*;
 

@@ -1,4 +1,4 @@
-package multitask_limiter.custom;
+package work_tasklimiter.custom;
 
 public class CustomTask implements Runnable {
 
