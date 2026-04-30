@@ -1,4 +1,4 @@
-package work_tasklimiter.custom;
+package work_tasklimiter.project;
 
 import java.util.Random;
 

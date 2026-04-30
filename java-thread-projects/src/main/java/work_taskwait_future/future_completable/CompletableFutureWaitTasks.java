@@ -1,4 +1,4 @@
-package work_taskwait_future.completable_future;
+package work_taskwait_future.future_completable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 // TODO. CompletableFuture.allOf()
 // - 异步/函数式，面向异步编排(非阻塞)
 // - 适合复杂的任务依赖关系，回调/链式处理(thenApply/thenCompose等)
-public class WaitTasksCompletableFutureAsync {
+public class CompletableFutureWaitTasks {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(5);

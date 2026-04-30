@@ -1,4 +1,4 @@
-package work_tasklimiter.custom;
+package work_tasklimiter.project;
 
 public class CustomTask implements Runnable {
 

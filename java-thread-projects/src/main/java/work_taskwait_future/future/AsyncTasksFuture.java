@@ -1,4 +1,4 @@
-package work_taskwait_future;
+package work_taskwait_future.future;
 
 import java.util.concurrent.*;
 
@@ -22,9 +22,8 @@ public class AsyncTasksFuture {
         if (future.isCancelled()) {
             System.out.println("Task has been cancelled");
         } else {
-            // TODO. 调用Get获取结果会阻塞当前线程
-            // 调用Get带线程中抛出的异常: CancellationException表示任务被取消
-            // 调用Get无法获取到以取消任务的结果
+            // TODO. 调用Get获取结果会阻塞当前线程 => 带抛出的异常
+            // Cancel取消之后无法获取到以取消任务的结果
             System.out.println(future.get());
 
             // 支持多次获取同一个future的结果

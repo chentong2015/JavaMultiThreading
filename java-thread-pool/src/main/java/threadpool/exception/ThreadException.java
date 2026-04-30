@@ -4,8 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-// TODO. 线程池中子线程抛出的异常, 默认不会传播到主线程
-public class ThreadPoolException {
+public class ThreadException {
 
     public static void main(String[] args) {
         AtomicBoolean hasError = new AtomicBoolean(false);
@@ -14,6 +13,8 @@ public class ThreadPoolException {
             int index = 0;
             while (!hasError.get()) {
                 int finalIndex = index;
+
+                // TODO. 线程池中子线程抛出的异常不会传播到主线程
                 taskExecutor.execute(() -> {
                     try {
                         processItems(finalIndex);
@@ -37,16 +38,13 @@ public class ThreadPoolException {
     }
 
     private static void processItems(int finalIndex) {
-        System.out.println("Run index " + finalIndex);
+        if (finalIndex == 3) {
+            throw new RuntimeException("Error inside thread");
+        }
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-        if (finalIndex == 3) {
-            throw new RuntimeException("Error inside thread");
-        }
-        System.out.println("Finish Index " + finalIndex);
     }
 }

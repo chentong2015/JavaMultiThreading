@@ -1,11 +1,11 @@
-package work_taskwait_future.completable_future;
+package work_taskwait_future.future_completable;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class WaitTasksCompletableFuture {
+public class CompletableFutureDemo {
 
     public static void main(String[] args) {
         ExecutorService threadPool = Executors.newFixedThreadPool(3);
