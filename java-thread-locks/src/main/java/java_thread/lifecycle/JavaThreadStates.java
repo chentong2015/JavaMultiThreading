@@ -14,6 +14,7 @@ public class JavaThreadStates {
         System.out.println(thread.getState()); // NEW
 
         thread.start();
+        thread.start(); // IllegalThreadStateException 状态的异常
         System.out.println("Done thread 1");
 
         // Waits for this thread to die
