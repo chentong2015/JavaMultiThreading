@@ -20,4 +20,11 @@ public class DeadLockDemo1 {
         empty = true;
         return message;
     }
+
+    public static void main(String[] args) {
+        DeadLockDemo1 deadLockDemo1 = new DeadLockDemo1();
+        deadLockDemo1.read();
+        new Thread(()-> deadLockDemo1.write("test message")).start();
+        System.out.println("all done");
+    }
 }

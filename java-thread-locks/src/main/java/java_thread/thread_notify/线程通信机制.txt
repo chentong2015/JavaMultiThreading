@@ -15,7 +15,7 @@ TODO: 并发工具的使用优先于wait和notify
 3. 只能在synchronized语句块中调用，必须要拥有object对象上的lock，然后才能调用wait()
 
 
-wait() 当前线程等待, 释放掉它所拥有的lock, 直到被唤醒, 被通知或中断
+wait() 当前线程等待, 释放掉它所拥有的lock, 直到被唤醒被通知或中断
  Causes the current thread to wait until it is awakened => WAIT state
  typically by being notified or interrupted
 
