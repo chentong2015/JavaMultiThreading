@@ -5,20 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>JavaThreadMultithreading</artifactId>
+    <artifactId>base-thread-locks</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-
-        <module>java-thread-pool</module>
-        <module>java-concurrent-api</module>
-        <module>java-thread-projects</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>

@@ -1,0 +1,7 @@
+TODO. Park()用于挂起(禁用)当前线程
+- 将线程置于Disable状态(不占用CPU)
+- 挂起线程不会释放持有的锁
+- 唤醒(无延迟)挂起线程的几种方式:
+  - 通过LockSupport.unpark(thread)唤醒
+  - 线程被Interrupt中断
+  - 被系统某个条件或信号唤醒来恢复

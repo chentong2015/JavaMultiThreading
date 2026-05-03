@@ -1,0 +1,8 @@
+TODO. 线程在执行期间突然被中断的场景:
+在正常运行时被interrupt，线程会抛出异常InterruptedException
+
+在sleep()或wait()期间中断，线程中断状态将改为.isInterrupted()=true
+
+如果调用.interrupt()方法两次，则.isInterrupted()状态会被改回成false ?
+
+如果处于wait()期间的线程，同时被notify和interrupt会如何 ?

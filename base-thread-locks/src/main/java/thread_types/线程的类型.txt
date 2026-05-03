@@ -1,0 +1,12 @@
+进程 Process: 应用启动后开启的进程，分配进程ID
+线程 Thread: CPU调度的最小单位, 也叫轻量级进程LWP(Light Weight Process)
+
+TODO. Java两种线程: User Threads + Daemon Threads = Live Threads
+1. 普通的用户线程 User Thread - Thread.setDaemon(false);
+   只要有一个用户线程在，JVM就不会退出
+2. 守护线程(后台线程) Daemon Thread Thread.setDaemon(ture);
+   运行在后台的特殊线程，执行某种任务或者等待处理某些事件
+   只要有一个用户线程在，后台线程就不会退出
+
+后台守护线程不会阻止JVM的推出(Do not prevent the JVM from exiting when the program finishes)
+当只剩守护线程池，JVM自动退出(JVM exits when the only threads running are all daemon threads)
