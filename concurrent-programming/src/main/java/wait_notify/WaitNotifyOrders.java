@@ -12,7 +12,7 @@ public class WaitNotifyOrders {
     private static Boolean t2Run = false;
 
     public static void main(String[] args) {
-        final Thread thread1 = new Thread(() -> {
+        Thread thread1 = new Thread(() -> {
             synchronized (lock1) {
                 System.out.println("Thread 1 done");
                 t1Run = true;
@@ -20,7 +20,7 @@ public class WaitNotifyOrders {
             }
         });
 
-        final Thread thread2 = new Thread(() -> {
+        Thread thread2 = new Thread(() -> {
             synchronized (lock1) {
                 try {
                     // 可能由thread2先拿到锁，但是不能执行，必须等待.wait()

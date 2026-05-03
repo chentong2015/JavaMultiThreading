@@ -1,4 +1,4 @@
-package synchronisation.issues.liveLocks;
+package work_issues.liveLocks;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

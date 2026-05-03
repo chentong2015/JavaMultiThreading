@@ -1,4 +1,4 @@
-package synchronisation.issues.deadlocks;
+package work_issues.deadlocks;
 
 // DeadLocks 基本解决方案:
 // 1. 避免程序在逻辑上造成的死锁问题，缩小同步语句块

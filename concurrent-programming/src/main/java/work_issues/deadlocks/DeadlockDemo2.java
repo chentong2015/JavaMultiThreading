@@ -1,4 +1,4 @@
-package synchronisation.issues.deadlocks;
+package work_issues.deadlocks;
 
 // 两个线程相互拥有各自的Lock，同时等待对方释放lock
 public class DeadlockDemo2 {

@@ -1,4 +1,4 @@
-package synchronisation.issues.liveLocks;
+package work_issues.liveLocks;
 
 // 解决方案1: 从程序逻辑(设计)上面避免反复循环的产生
 public class BaseLiveLocks01 {
