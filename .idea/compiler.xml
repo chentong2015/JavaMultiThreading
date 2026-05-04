@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="concurrent-programming" />
+        <module name="base-thread" />
         <module name="java-concurrent-api" />
-        <module name="base-thread-locks" />
         <module name="java-thread-projects" />
         <module name="java-thread-pool" />
       </profile>

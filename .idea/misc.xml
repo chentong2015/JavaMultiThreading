@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/concurrent-programming/pom.xml" />
         <option value="$PROJECT_DIR$/java-thread-locks/pom.xml" />
         <option value="$PROJECT_DIR$/base-thread-locks/pom.xml" />
+        <option value="$PROJECT_DIR$/base-thread/pom.xml" />
       </list>
     </option>
   </component>
