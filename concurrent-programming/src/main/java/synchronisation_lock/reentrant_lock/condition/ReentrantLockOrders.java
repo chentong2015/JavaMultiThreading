@@ -1,4 +1,4 @@
-package synchronisation_lock.ReentrantLock.condition;
+package synchronisation_lock.reentrant_lock.condition;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

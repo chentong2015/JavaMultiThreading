@@ -1,4 +1,4 @@
-package synchronisation_lock.ReentrantLock;
+package synchronisation_lock.reentrant_lock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;

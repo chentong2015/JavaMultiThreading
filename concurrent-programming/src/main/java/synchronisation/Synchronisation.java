@@ -20,7 +20,7 @@ public class Synchronisation {
      * 5. Stack contains primitive values, object reference, method reference
      */
     private static void testThreadVariables() {
-        ShareVariables threadShareVariables = new ShareVariables();
+        ShareResources threadShareVariables = new ShareResources();
         Thread thread1 = new Thread(threadShareVariables::doCountDown, "BaseThread 1");
         Thread thread2 = new Thread(threadShareVariables::doCountDown, "BaseThread 2");
         thread1.start();

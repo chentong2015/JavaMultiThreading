@@ -7,6 +7,10 @@ package synchronisation_lock.optimistic_cas;
 // - 如果其他的事务有更新的话，正在提交的事务会进行回滚
 public class JavaOptimisticLock {
 
+    public static void main(String[] args) {
+        // TEST OCC 乐观锁 + CAS 自旋锁 + 轻量级锁
+    }
+
     // TODO. 考虑并发冲突场景: 将target目标数据修改成它和value间的更大值
     public int updateTargetToMax(int target, int value) {
         int baseValue;

@@ -1,4 +1,4 @@
-package synchronisation_lock.ReadWriteLock;
+package synchronisation_lock.read_write_lock;
 
 import java.util.HashMap;
 import java.util.Map;

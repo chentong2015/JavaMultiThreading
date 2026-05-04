@@ -1,4 +1,4 @@
-package synchronisation_lock.cas;
+package synchronisation_lock.optimistic_cas;
 
 // 使用CAS自定义实现一把锁
 // CAS算法: 将一个预期值和内存值进行比较，如果相等则更换新的值，反之自旋

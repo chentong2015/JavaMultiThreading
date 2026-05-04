@@ -1,3 +1,12 @@
+1. 每个对象除具有关联的monitor监视器外，还具有关联的"wait set"等待集(set of java_thread)
+2. wait set初始时为空,可在集中添加或者删除等待的线程
+3. wait set集的操作会被线程的isInterrupted()状态所影响
+
+1. Synchronization is implemented by using monitors
+2. Each object in Java is associated with a monitor, which a thread can lock or unlock
+3. Only one thread at a time may hold a lock on a monitor
+4. 如果正常或突然完成方法主体的执行，将在同一个monitor监视器上自动执行解锁
+
 TODO: synchronized是Java语言一个重量级操作
 对应到操作系统内核线程之上，造成用户态和核心态的转换
 绝大部分的并发控制都能够使用synchronized来实现，符合3种特性

@@ -5,7 +5,7 @@ package synchronisation.synchronize;
 //    (the object for which the method was invoked) is used
 // 2. For static method, the monitor associated with the "Class" object
 //    for the method's class is used
-public class JavaSynchronizedMonitor {
+public class JavaSynchronizedTypes {
 
     public int count;
     public static int classCount;

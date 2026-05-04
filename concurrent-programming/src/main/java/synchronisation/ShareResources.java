@@ -4,7 +4,7 @@ package synchronisation;
  * 1. All instance fields, static fields, and array elements are stored in heap memory 程序的主内存, 堆空间
  * 2. Local variables, formal method parameters, and exception handler parameters are never shared between threads
  */
-public class ShareVariables {
+public class ShareResources {
 
     // 对象field成员存储在内存的堆空间(heap memory): 所有Threads共享数据
     private int index;

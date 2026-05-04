@@ -1,4 +1,4 @@
-package synchronisation_lock.ReentrantLock.fair_lock;
+package synchronisation_lock.reentrant_lock.fair_lock;
 
 public class ReentrantLockFairLock {
 

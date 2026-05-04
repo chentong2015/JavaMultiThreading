@@ -1,4 +1,4 @@
-package synchronisation_lock.cas;
+package synchronisation_lock.optimistic_cas;
 
 public class JavaCasWait {
 
