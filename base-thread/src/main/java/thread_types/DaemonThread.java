@@ -11,6 +11,7 @@ public class DaemonThread {
             setDaemon(false);
         }
 
+        // 周期性每隔5秒输出一条信息
         public void run() {
             int count = 0;
             while (true) {

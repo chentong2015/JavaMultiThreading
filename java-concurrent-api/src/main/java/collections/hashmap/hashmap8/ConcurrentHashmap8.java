@@ -194,4 +194,11 @@ public class ConcurrentHashmap8 {
     //    }
     //    h = ThreadLocalRandom.advanceProbe(h); 在重新计算hash
     // }
+
+
+    // fullAddCount()计数源码的实现:
+    // 内部使用 transient volatile long base;
+    // 使用数组 cell1=0  cell2=0  cell3=0 多线程对数组中不同的段位进行自增操作，避免线程空转
+    // 通过数组来实现，分段CAS做增加，根据线程的多少会自动的缩容数组
+    // 最后使用sum()需要统计所有cell中value的总和
 }

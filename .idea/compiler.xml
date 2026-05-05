@@ -9,6 +9,7 @@
         <module name="concurrent-programming" />
         <module name="base-thread" />
         <module name="java-concurrent-api" />
+        <module name="java-thread-scheduled" />
         <module name="java-thread-projects" />
         <module name="java-thread-pool" />
       </profile>

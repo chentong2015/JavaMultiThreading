@@ -12,6 +12,7 @@
         <module>java-thread-pool</module>
         <module>java-concurrent-api</module>
         <module>java-thread-projects</module>
+        <module>java-thread-scheduled</module>
     </modules>
 
     <properties>
