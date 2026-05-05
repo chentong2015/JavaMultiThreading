@@ -1,4 +1,4 @@
-package threads_park;
+package synchronisation_lock.cas_park;
 
 public class CustomThread extends Thread {
 

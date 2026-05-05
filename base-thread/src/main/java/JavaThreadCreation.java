@@ -1,6 +1,4 @@
-package lifecycle;
-
-// TODO. 本质上只有一种方式创建Java线程: 实现Runnable接口, 实现run()方法
+// TODO. 只有一种方式创建Java线程: 实现Runnable接口, 实现run()方法
 public class JavaThreadCreation {
 
     static class DemoRunnable implements Runnable {
@@ -52,7 +50,7 @@ public class JavaThreadCreation {
         // .start() 线程级别的调用: 会创建新的线程，并自动调用线程的run()方法
         demoThread.start();
 
-        // 同一个线程不能.start()启动多次，否则抛出IllegalThreadStateException
+        // 同个线程不能.start()启动多次，否则抛出IllegalThreadStateException
         // demoThread.start();
     }
 }

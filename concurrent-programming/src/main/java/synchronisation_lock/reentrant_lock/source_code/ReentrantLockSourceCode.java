@@ -1,6 +1,12 @@
-package synchronisation_lock.reentrant_lock.fair_lock;
+package synchronisation_lock.reentrant_lock.source_code;
 
-public class ReentrantLockFairLock {
+// TODO: AQS(AbstractQueuedSynchronizer) 队列设计思想
+// 自旋(2次) + park/unpark(UNSAFE操作) + CAS(通过设置状态拿锁)
+// 让AQS队列中第一个Node结点的线程是持有锁的线程，实际上持有锁的线程不参与排队，因此头结点是"虚拟结点"
+// 1. 线程如何拿到锁 ?
+// 2. 没有拿到锁的线程如何入队列 ?
+// 3. 持有锁的线程释放锁 + 排队线程的唤醒 ?
+public class ReentrantLockSourceCode {
 
     // class UnFairSync extends Sync
     final boolean initialTryLockUnFair() {

@@ -1,4 +1,4 @@
-package wait_notify;
+package thread_waitnotify;
 
 // TODO. 使用Wait Notify实现三个线程的顺序执行
 public class WaitNotifyOrders {

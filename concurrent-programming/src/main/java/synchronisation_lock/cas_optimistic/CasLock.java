@@ -7,8 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 // 2. 在自旋时不断判断是否符合操作要求: 比较修改前的旧值，对比旧的版本号
 // 3. 判断是否符合操作要求: 保证原子性
 //
-// TODO. CAS ABA问题
-// 即使符合修改条件也无法保证之前没有被修改过，可能发生"修改并还原" -> 添加版本号version记录
+// CAS ABA问题: 即使符合修改条件也无法保证之前没有被修改过，可能发生"修改并还原"
 public class CasLock {
 
     // TODO. 使用AtomicInteger来确保compareAndSet()操作是原子操作

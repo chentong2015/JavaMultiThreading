@@ -24,7 +24,11 @@ public class DeadLockDemo1 {
     public static void main(String[] args) {
         DeadLockDemo1 deadLockDemo1 = new DeadLockDemo1();
         deadLockDemo1.read();
-        new Thread(()-> deadLockDemo1.write("test message")).start();
-        System.out.println("all done");
+
+        // 用于写的线程根本就无法运行
+        new Thread(() -> {
+            deadLockDemo1.write("test message");
+            System.out.println(Thread.currentThread().getState());
+        }).start();
     }
 }

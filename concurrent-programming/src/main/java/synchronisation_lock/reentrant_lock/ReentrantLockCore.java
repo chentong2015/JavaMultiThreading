@@ -3,14 +3,12 @@ package synchronisation_lock.reentrant_lock;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-// ReentrantLock
+// ReentrantLock 可重入锁
 // 1. 正在等待reentrantLock锁的线程可以选择放弃等待
-// 2. 公平锁: 作为公平锁使用，解决线程饥饿问题，释放锁时，任何一个等待锁的线程都有机会获得锁
-// 3. 可重入锁: 获得到同步锁之后，可以再继续执行需要该同步锁的代码块
+// 2. 获取reentrantLock锁后执行完毕回调等待队列，可以重新再获取锁执行
 public class ReentrantLockCore {
 
-    // 设置公平锁会耗费额外的processing去管理和确保公平，对性能影响较大，减低吞吐量
-    private ReentrantLock reentrantLock = new ReentrantLock(true);
+    private ReentrantLock reentrantLock = new ReentrantLock();
 
     private void testReentrantLock() throws InterruptedException {
         // 获取在AQS队列中等待的线程数目
