@@ -3,7 +3,7 @@ package features;
 import java.util.HashMap;
 import java.util.Map;
 
-// volatile 三大核心特性(功能) => 只提供同步的通讯效果 !!
+// TODO. volatile 三大核心特性: 只提供同步的通讯功能
 // 1. 部分原子性
 // 2. 保证并发编程的"可见性" > JMM架构+读写层面
 //    硬件架构原理：缓存一致性协议(MESI) + CPU总线嗅探机制(监听)

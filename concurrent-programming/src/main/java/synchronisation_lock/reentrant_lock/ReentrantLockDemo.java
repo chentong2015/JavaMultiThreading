@@ -17,6 +17,7 @@ public class ReentrantLockDemo {
     }
 
     static class DemoClass {
+        // 多线程共享的数据资源
         private int value;
 
         public DemoClass(int value) {
