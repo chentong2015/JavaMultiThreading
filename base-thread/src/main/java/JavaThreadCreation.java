@@ -41,14 +41,12 @@ public class JavaThreadCreation {
 
         // 线程的优先级只是给OS参考，并非确定的执行顺序
         Thread runThread = new Thread(new DemoRunnable());
-        runThread.setPriority(10);
         runThread.start();
 
         DemoThread demoThread = new DemoThread();
         demoThread.setName("Name");
 
         // TODO. 注意run()方法级别和start()线程级别调用
-
         // .run() 方法级别的调用: 等效于调主线程的run()方法，始终只在一个线程
         demoThread.run();
 

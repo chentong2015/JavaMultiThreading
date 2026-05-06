@@ -5,11 +5,10 @@ public class JavaThreadSleepStop {
     //  sleep()期间的线程可能被"中断"，抛出中断异常
     public static void main(String[] args) {
         try {
-            // 如果线程没有被中断打扰，则会在3S时间后自动唤醒
+            // 如果线程没有被中断打扰，则在3S时间后自动唤醒
             Thread.sleep(3000);
             Thread.sleep(3000, 10);
         } catch (InterruptedException e) {
-            // 线程在sleep期间被中断
             System.out.println("Thread interrupt");
         }
     }
@@ -27,6 +26,7 @@ public class JavaThreadSleepStop {
             }
         });
         thread.start();
+
         try {
             // Waits for this thread to die. 结束线程的生命周期
             thread.join();
