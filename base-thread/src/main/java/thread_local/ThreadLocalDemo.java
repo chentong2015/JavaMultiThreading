@@ -14,11 +14,20 @@ public class ThreadLocalDemo {
         ThreadLocal<String> threadLocal = new ThreadLocal<>();
         threadLocal.set("value");
 
+        ThreadLocal<Integer> threadLocal1 = new ThreadLocal<>();
+        threadLocal1.set(100);
+
         new Thread(() -> {
             // Can't get value from ThreadLocal of Main
-            System.out.println("new thread:" + threadLocal.get());
+            System.out.println("new thread, get string :" + threadLocal.get());
+            System.out.println("new thread, get int :" + threadLocal1.get());
         }).start();
 
+        System.out.println(threadLocal.get());
+        System.out.println(threadLocal1.get());
+
+        // Removes the current thread's value for this thread-local variable
+        threadLocal.remove();
         System.out.println(threadLocal.get());
     }
 }

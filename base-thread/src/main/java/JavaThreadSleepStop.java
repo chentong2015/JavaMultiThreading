@@ -28,7 +28,7 @@ public class JavaThreadSleepStop {
         thread.start();
 
         try {
-            // Waits for this thread to die. 结束线程的生命周期
+            // Waits for this thread to die. 调用join会阻塞主线程
             thread.join();
         } catch (InterruptedException exception) {
             System.out.println("Interrupted");
