@@ -2,7 +2,7 @@ package synchronisation_lock.spin_park;
 
 import java.util.concurrent.locks.LockSupport;
 
-public class ThreadParkTest {
+public class ParkThreadTest {
 
     // TODO. 在持有锁情况下调用Park可能导致死锁!
     private final Object lock = new Object();

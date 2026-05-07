@@ -1,4 +1,4 @@
-package thread_waitnotify;
+package synchronisation_lock.wait_notify;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

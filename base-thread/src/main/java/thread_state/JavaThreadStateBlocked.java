@@ -26,8 +26,8 @@ public class JavaThreadStateBlocked {
         });
         Thread.sleep(1000); // Make sure A gets lock
         threadB.start();
-        Thread.sleep(1000); // Make sure B goes to BLOCKED
 
+        Thread.sleep(1000); // Make sure B goes to BLOCKED
         System.out.println("Thread A State: " + threadA.getState());
         System.out.println("Thread B State: " + threadB.getState());
     }

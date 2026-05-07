@@ -1,3 +1,5 @@
+package thread_base;
+
 // TODO. JVM会在main()方法执行介绍后创建DestroyJavaVM线程来等待所有用户线程结束
 // Once main completes, the JVM is told to shut down using a DestroyJavaVM thread
 // which waits for all non-daemon threads to complete before doing its work.

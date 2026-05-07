@@ -1,3 +1,5 @@
+package thread_base;
+
 // TODO. 只有一种方式创建Java线程: 实现Runnable接口, 实现run()方法
 public class JavaThreadCreation {
 

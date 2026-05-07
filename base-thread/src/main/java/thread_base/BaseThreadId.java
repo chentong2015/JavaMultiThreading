@@ -1,3 +1,5 @@
+package thread_base;
+
 // 一个进程中包含多个线程，通过进程ID来定位
 // 线程ID从1开始递增，仅在JVM内部有意义，不等于操作系统线程ID
 public class BaseThreadId {

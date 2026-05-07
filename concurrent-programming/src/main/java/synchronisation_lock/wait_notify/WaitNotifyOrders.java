@@ -1,4 +1,4 @@
-package thread_waitnotify;
+package synchronisation_lock.wait_notify;
 
 // TODO. 使用Wait Notify实现三个线程的顺序执行
 public class WaitNotifyOrders {
@@ -52,7 +52,7 @@ public class WaitNotifyOrders {
         });
 
         thread1.start();
-        thread3.start();
         thread2.start();
+        thread3.start();
     }
 }

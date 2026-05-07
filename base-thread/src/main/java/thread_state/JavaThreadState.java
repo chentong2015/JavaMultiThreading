@@ -9,8 +9,8 @@ public class JavaThreadState {
         System.out.println("Start main thread");
         System.out.println(Thread.currentThread().getState()); // RUNNABLE
 
-        testRun();
-        testTimeWaiting();
+        // testRun();
+        // testTimeWaiting();
         testWaiting();
     }
 
@@ -52,5 +52,10 @@ public class JavaThreadState {
 
         Thread.sleep(1000);
         System.out.println(thread.getState()); // WAITING 无限期等待，直到唤醒或中断
+
+        LockSupport.unpark(thread);
+
+        Thread.sleep(1000);
+        System.out.println(thread.getState());
     }
 }
