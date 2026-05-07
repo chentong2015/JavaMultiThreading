@@ -5,27 +5,29 @@ package synchronisation_problems.deadlocks;
 public class DeadLockDemo1 {
 
     private String message;
-    private boolean empty = true;
 
     public synchronized void write(String message) {
-        while (!empty) {
+        while (message == null) {
+            // spin wait
         }
-        empty = false;
         this.message = message;
     }
 
-    public synchronized String read() {
-        while (empty) {
+    public synchronized void read() {
+        while (message == null) {
+            // spin wait
         }
-        empty = true;
-        return message;
+        System.out.println("Read message: " + message);
+        message = null;
     }
 
     public static void main(String[] args) {
+        System.out.println("Start read..");
         DeadLockDemo1 deadLockDemo1 = new DeadLockDemo1();
         deadLockDemo1.read();
 
         // 用于写的线程根本就无法运行
+        System.out.println("Start write..");
         new Thread(() -> {
             deadLockDemo1.write("test message");
             System.out.println(Thread.currentThread().getState());
