@@ -1,4 +1,4 @@
-package synchronisation_problems.thread_interrupt;
+package thread_interrupt;
 
 // TODO. 中断线程多次时，必须判断处于中断状态的什么阶段
 public class ThreadInterruptedDouble {

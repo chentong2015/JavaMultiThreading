@@ -8,11 +8,12 @@ public class JavaReadWriteLockTest {
     private final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
 
     public void read() {
+        String name = Thread.currentThread().getName();
         rwLock.readLock().lock();
         try {
-            System.out.println(Thread.currentThread().getName() + " Start Read ...");
+            System.out.println(name + " Start Read ...");
             Thread.sleep(3000);
-            System.out.println(Thread.currentThread().getName() + " Read data ：" + data);
+            System.out.println(name + " Read data ：" + data);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {
@@ -21,12 +22,13 @@ public class JavaReadWriteLockTest {
     }
 
     public void write(int value) {
+        String name = Thread.currentThread().getName();
         rwLock.writeLock().lock();
         try {
-            System.out.println(Thread.currentThread().getName() + " Start write ...");
+            System.out.println(name + " Start write ...");
             Thread.sleep(3000);
             data = value;
-            System.out.println(Thread.currentThread().getName() + " Write data ：" + value);
+            System.out.println(name + " Write data ：" + value);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {

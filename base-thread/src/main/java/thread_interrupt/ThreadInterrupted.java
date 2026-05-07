@@ -1,4 +1,4 @@
-package synchronisation_problems.thread_interrupt;
+package thread_interrupt;
 
 // TODO. 线程被中断的结果:
 // 清除中断标识并抛出异常InterruptedException

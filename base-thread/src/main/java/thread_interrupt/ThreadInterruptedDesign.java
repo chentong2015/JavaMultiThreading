@@ -1,4 +1,4 @@
-package synchronisation_problems.thread_interrupt;
+package thread_interrupt;
 
 // TODO. 捕获异常: 消费中断信号并清除中断状态Status
 public class ThreadInterruptedDesign {
