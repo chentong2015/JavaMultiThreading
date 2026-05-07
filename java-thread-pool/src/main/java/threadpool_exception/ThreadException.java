@@ -1,4 +1,4 @@
-package threadpool.exception;
+package threadpool_exception;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

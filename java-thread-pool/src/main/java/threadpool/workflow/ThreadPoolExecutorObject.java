@@ -1,4 +1,4 @@
-package threadpool;
+package threadpool.workflow;
 
 import java.util.concurrent.*;
 

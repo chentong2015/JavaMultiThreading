@@ -24,7 +24,7 @@ public class ThreadPoolShutdown {
         // 正在执行的线程被立即中断，退出且不再接收新的任务
         executorService.shutdownNow();
 
-        // TODO. Blocks 阻塞形式关闭
+        // TODO. Blocks 阻塞形式关闭 ==> 必须要先进入shutdown的流程
         // 阻塞直到先前所有提交的任务都执行完毕或者Timeout
         executorService.shutdown();
         boolean isCompleted = executorService.awaitTermination(5, TimeUnit.SECONDS);

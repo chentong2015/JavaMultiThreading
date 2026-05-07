@@ -1,4 +1,4 @@
-package work_taskwait;
+package threadpool_future;
 
 import java.util.concurrent.*;
 
