@@ -15,8 +15,16 @@ public class ReentrantLockCore {
         int numThreadsWaiting = reentrantLock.getQueueLength();
 
         // 尝试获取lock，设置timeout时间避免不必要尝试
-        if (reentrantLock.tryLock(1000, TimeUnit.MILLISECONDS)) {
-            System.out.println("Get Lock");
+        try {
+            if (reentrantLock.tryLock(1, TimeUnit.MICROSECONDS)) {
+                System.out.println("get lock ok");
+            } else {
+                // 超时之后不再等待，直接返回
+                System.out.println("do not wait lock any more");
+                return;
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         // 直接获取一个锁

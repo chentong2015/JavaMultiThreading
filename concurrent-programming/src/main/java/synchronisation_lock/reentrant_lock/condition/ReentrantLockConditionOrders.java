@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ReentrantLockOrders {
+public class ReentrantLockConditionOrders {
 
     private static Lock lock = new ReentrantLock();
     private static Condition condition1 = lock.newCondition();
