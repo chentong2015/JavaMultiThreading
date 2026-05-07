@@ -1,4 +1,4 @@
-package work_taskwait_future.project;
+package work_taskwait.project;
 
 import java.util.Objects;
 import java.util.concurrent.Callable;

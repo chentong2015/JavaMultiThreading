@@ -1,4 +1,4 @@
-package work_taskwait_future.project;
+package work_taskwait.project;
 
 import java.util.Arrays;
 import java.util.List;

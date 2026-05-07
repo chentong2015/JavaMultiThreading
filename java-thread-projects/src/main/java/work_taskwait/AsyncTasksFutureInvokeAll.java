@@ -1,4 +1,4 @@
-package work_taskwait_future.invokeall;
+package work_taskwait;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 // - 同步/命令式, 立即阻塞主线程
 // - 应用于简单可靠的批处理/CPU任务/导出统计
 // - 很难区分每个结果对于的具体任务, 缺少隐射关系
-public class WaitTasksInvokeAll {
+public class AsyncTasksFutureInvokeAll {
 
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(3);

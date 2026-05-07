@@ -1,4 +1,4 @@
-package work_taskwait_future.future;
+package work_taskwait;
 
 import java.util.concurrent.*;
 
