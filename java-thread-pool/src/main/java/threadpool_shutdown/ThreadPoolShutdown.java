@@ -1,4 +1,4 @@
-package threadpool.shutdown;
+package threadpool_shutdown;
 
 import java.util.concurrent.*;
 
@@ -31,7 +31,7 @@ public class ThreadPoolShutdown {
         System.out.println(executorService.isTerminated());
     }
 
-    // 封装线程池shutdown的方法
+    // 标准shutdown关闭线程池的方法，阻塞等待后强制中断关闭
     public void awaitThreadPoolTermination(ExecutorService threadPool) {
         threadPool.shutdown();
         try {
@@ -40,6 +40,7 @@ public class ThreadPoolShutdown {
             }
         } catch (InterruptedException ex) {
             threadPool.shutdownNow();
+            // 确保中断的异常通知到上层的线程
             Thread.currentThread().interrupt();
         }
     }

@@ -2,16 +2,12 @@ package forkjoinPool;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentMap;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 // TODO. Streams Pipeline 不要任意并行执行
-// - Stream.parallel()并行执行并不一定能提高性能, 需要考虑特定场景
-// - 拆分整个流成多个sub_streams流并发执行, 底层依赖通用的ForkJoinPool线程池
+// - 并行执行并不一定能提高性能, 需要考虑特定场景
+// - 拆分流数据成多个substreams流并发执行, 底层依赖通用的ForkJoinPool线程池
 // - 并发执行中一个pipeline异常可能损害系统中其他不相关性能
-public class JavaParallelStreams {
+public class CommonPoolParallelStreams {
 
     // TODO: .stream().parallel() & .parallelStream() 如何执行
     // Returns a possibly parallel Stream with this collection as its source
@@ -24,7 +20,7 @@ public class JavaParallelStreams {
             partitions.add("partition: " + index);
         }
 
-        // TODO. 依赖ForkJoinPool.commonPool-worker公共线程池
+        // TODO. 依赖公共线程池 ForkJoinPool.commonPool-worker
         long result = partitions.parallelStream()
                 .map(partition -> {
                     System.out.println(Thread.currentThread().getName());

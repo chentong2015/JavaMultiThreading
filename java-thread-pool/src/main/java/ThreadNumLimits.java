@@ -6,6 +6,9 @@
 //   at memory.ThreadNumberLimits.main(ThreadNumberLimits.java:15)
 public class ThreadNumLimits {
 
+    // 最大允许的并行线程数量受到OS系统线程数限制
+    private static int maxNumThreadsSupported = Runtime.getRuntime().availableProcessors();
+
     public static void main(String[] args) throws Exception {
         while (true) {
             new Thread(() -> {
